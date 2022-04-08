@@ -1,0 +1,62 @@
+body {
+	background-color: #222;
+	color: #eee;
+}
+
+.container {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.item {
+	width: 25%;
+}
+
+.item-content {
+	padding: 10px;
+}
+
+iframe {
+	width: 100%;
+}
+
+.gameLink {
+	position: absolute;
+	width: 100%;
+}
+
+iframe,
+.gameLink {
+	height: 320px;
+}
+
+@media screen and (max-width: 1300px) {
+	.item {
+		width: 33%;
+	}
+
+	iframe,
+	.gameLink {
+		height: 250px;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.item {
+		width: 50%;
+	}
+
+	iframe,
+	.gameLink {
+		height: 200px;
+	}
+}
+
+.btn,
+.btn:visited {
+	color: #fff;
+	text-decoration: none;
+	padding: 5px;
+	border: #fff solid 1px;
+	border-radius: 0.5em;
+}
