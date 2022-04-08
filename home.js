@@ -55,7 +55,7 @@ for (let i = startIndex; i < startIndex + 8; i++) {
 	if (!game) break;
 	let url = `./?user=${game.user}&game=${game.title}`;
 	for (let attr in game) {
-		if (attr == 'title') continue;
+		if (attr == 'title' || attr == 'user') continue;
 		url += `&${attr}=${game[attr]}`;
 	}
 	html += `
