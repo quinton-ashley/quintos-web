@@ -5,6 +5,7 @@ body {
 	color: #eee;
 	margin: 0;
 	padding: 0;
+	font-size: 20px;
 }
 
 nav {
@@ -12,6 +13,13 @@ nav {
 	flex-flow: row wrap;
 	justify-content: center;
 	align-items: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-weight: bold;
+}
+
+#homeLink {
+	font-size: 50px;
 }
 
 .container {
@@ -28,7 +36,7 @@ nav {
 }
 
 .item-info {
-	font-size: larger;
+	font-size: 24px;
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;
 }
@@ -72,7 +80,7 @@ iframe,
 	iframe,
 	.gameLink,
 	.item-iframe {
-		height: 200px;
+		height: 250px;
 	}
 }
 
