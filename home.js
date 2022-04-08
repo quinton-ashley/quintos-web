@@ -1,21 +1,21 @@
-// [
-// 	'GuessTheNumber',
-// 	'PickAPath',
-// 	'Pong',
-// 	'Hangman',
-// 	'QuickClicks',
-// 	'ClickAPath',
-// 	'TicTacToe',
-// 	'WorldWideWeb',
-// 	'WheelOfFortune',
-// 	'Contain',
-// 	'TicTacAIO',
-// 	'SpeakAndSpell',
-// 	'Snake',
-// 	'SketchBook',
-// 	'SuperJump',
-// 	'Sokoban'
-// ];
+const GAMES = [
+	'GuessTheNumber',
+	'PickAPath',
+	'Pong',
+	'Hangman',
+	'QuickClicks',
+	'ClickAPath',
+	'TicTacToe',
+	'WorldWideWeb',
+	'WheelOfFortune',
+	'Contain',
+	'TicTacAIO',
+	'SpeakAndSpell',
+	'Snake',
+	'SketchBook',
+	'SuperJump',
+	'Sokoban'
+];
 
 let args = {
 	page: 0
@@ -61,6 +61,18 @@ for (let i = startIndex; i < startIndex + 8; i++) {
 		if (attr == 'title' || attr == 'user') continue;
 		url += `&${attr}=${game[attr]}`;
 	}
+
+	let project = game.sys ? title : 'quintos-games';
+	let dir = '';
+	if (!game.sys) {
+		if (game.language == 'java') dir += 'games_java/';
+		else dir += 'GAMES/';
+	}
+	dir += title;
+	let fileName = title[0].toLowerCase() + title.slice(1);
+	if (game.language == 'java') fileName = title;
+	let fileExt = game.language || 'js';
+
 	html += `
 <div class="item">
 	<div class="item-content">
@@ -69,9 +81,7 @@ for (let i = startIndex; i < startIndex + 8; i++) {
 			<iframe src="${url}&iframe=true" scrolling="no" frameborder="0"></iframe>
 		</div>
 		<div class="item-info">
-			<a href="https://raw.githubusercontent.com/${user}/quintos-games/main/${
-		game.language == 'java' ? 'games_java' : 'GAMES'
-	}/${title}/${title[0].toLowerCase() + title.slice(1)}.${game.language || 'js'}";>${title}</a>
+			<a href="https://raw.githubusercontent.com/${user}/${project}/main/${dir}/${fileName}.${fileExt}" target="_blank" rel="noopener noreferrer">${title}</a>
 			<span>by</span>
 			<a>${user}</a>
 		</div>
