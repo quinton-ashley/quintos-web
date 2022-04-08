@@ -45,8 +45,8 @@ let games = [
 	{ user: 'quinton-ashley', title: 'Sokoban' },
 	{ user: 'quinton-ashley', title: 'WheelOfFortune' },
 	{ user: 'quinton-ashley', title: 'SuperJump' },
-	{ user: 'quinton-ashley', title: 'SketchBook' },
-	{ user: 'jaximuslim', title: 'QuickClicks' }
+	{ user: 'quinton-ashley', title: 'SketchBook' }
+	// { user: 'sophiaaaaaaaaaaaa', title: 'Pong', language: 'java' }
 ];
 
 let html = '';
@@ -55,7 +55,8 @@ let startIndex = (args.page || 0) * 8;
 for (let i = startIndex; i < startIndex + 8; i++) {
 	let game = games[i];
 	if (!game) break;
-	let url = `./?user=${game.user}&game=${game.title}`;
+	let { user, title } = game;
+	let url = `./?user=${user}&game=${title}`;
 	for (let attr in game) {
 		if (attr == 'title' || attr == 'user') continue;
 		url += `&${attr}=${game[attr]}`;
@@ -63,9 +64,17 @@ for (let i = startIndex; i < startIndex + 8; i++) {
 	html += `
 <div class="item">
 	<div class="item-content">
-		<a href="${url}" class="gameLink"></a>
-		<iframe src="${url}&iframe=true" scrolling="no" frameborder="0"></iframe>
-		<h4>${game.title} by ${game.user}</h4>
+		<div class="item-iframe">
+			<a href="${url}" class="gameLink"></a>
+			<iframe src="${url}&iframe=true" scrolling="no" frameborder="0"></iframe>
+		</div>
+		<div class="item-info">
+			<a href="https://raw.githubusercontent.com/${user}/quintos-games/main/${
+		game.language == 'java' ? 'games_java' : 'GAMES'
+	}/${title}/${title[0].toLowerCase() + title.slice(1)}.${game.language || 'js'}";>${title}</a>
+			<span>by</span>
+			<a>${user}</a>
+		</div>
 	</div>
 </div>`;
 }

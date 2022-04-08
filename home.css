@@ -1,6 +1,17 @@
+html,
 body {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	background-color: #222;
 	color: #eee;
+	margin: 0;
+	padding: 0;
+}
+
+nav {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
 }
 
 .container {
@@ -16,6 +27,16 @@ body {
 	padding: 10px;
 }
 
+.item-info {
+	font-size: larger;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+.item-iframe {
+	border: transparent solid 1px;
+}
+
 iframe {
 	width: 100%;
 }
@@ -26,7 +47,8 @@ iframe {
 }
 
 iframe,
-.gameLink {
+.gameLink,
+.item-iframe {
 	height: 320px;
 }
 
@@ -36,27 +58,49 @@ iframe,
 	}
 
 	iframe,
-	.gameLink {
+	.gameLink,
+	.item-iframe {
 		height: 250px;
 	}
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
 	.item {
 		width: 50%;
 	}
 
 	iframe,
-	.gameLink {
+	.gameLink,
+	.item-iframe {
 		height: 200px;
 	}
 }
 
 .btn,
 .btn:visited {
-	color: #fff;
+	color: #eee;
 	text-decoration: none;
 	padding: 5px;
-	border: #fff solid 1px;
+	border: #eee solid 1px;
 	border-radius: 0.5em;
+}
+
+nav a {
+	padding-right: 10px;
+}
+
+a {
+	cursor: pointer;
+	color: #eee;
+	text-decoration: none;
+}
+
+a:hover,
+.btn:hover {
+	color: #0ff;
+	border-color: #0ff;
+}
+
+.item-iframe:hover {
+	border-color: #0ff;
 }
