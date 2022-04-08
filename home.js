@@ -34,17 +34,19 @@ let args = {
 
 let games = [
 	{ user: 'quinton-ashley', title: 'Hangman' },
-	{ user: 'quinton-ashley', title: 'Snake' },
+	{ user: 'jaximuslim', title: 'Snake' },
 	{ user: 'Paeto-Chayarat', title: 'Crazy7', sys: 'arcv' },
 	{ user: 'rsaijo24', title: 'Contain', language: 'java' },
 	{ user: 'WarriorFPHS', title: 'QuickClicks' },
 	{ user: 'Rayan-Hobballah', title: 'PickAPath' },
 	{ user: 'Morz75', title: 'ClickAPath' },
 	{ user: 'MEDBEDFAKE', title: 'TicTacToe' },
+	{ user: 'jaximuslim', title: 'QuickClicks' },
 	{ user: 'quinton-ashley', title: 'Sokoban' },
 	{ user: 'quinton-ashley', title: 'WheelOfFortune' },
 	{ user: 'quinton-ashley', title: 'SuperJump' },
-	{ user: 'quinton-ashley', title: 'SketchBook' }
+	{ user: 'quinton-ashley', title: 'SketchBook' },
+	{ user: 'jaximuslim', title: 'QuickClicks' }
 ];
 
 let html = '';
