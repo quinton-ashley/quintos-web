@@ -163,3 +163,22 @@ drawText(txt, x, y);
 The p5.js `text` function, use it in the `draw` loop.
 
 <https://p5js.org/reference/#/p5/text>
+
+## delay
+
+```js
+await delay(millis);
+```
+
+Use the `delay` to have your program wait for a certain amount of time in milliseconds.
+
+```js
+// you need to make the function asynchronous to use await
+async function takeFive() {
+	log('start!');
+	await delay(5000); // waits for a delay of 5000ms aka 5 seconds
+	log('5 seconds passed');
+}
+
+takeFive();
+```
