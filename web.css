@@ -16,10 +16,51 @@ nav {
 	padding-top: 20px;
 	padding-bottom: 20px;
 	font-weight: bold;
+	margin: 0;
+	padding: 0;
+	padding-top: 2px;
+	gap: 14px;
+}
+
+nav img {
+	height: 100px;
+}
+
+nav .icon {
+	height: 32px;
 }
 
 #homeLink {
 	font-size: 50px;
+}
+
+#referenceLinks {
+	height: 80px;
+}
+
+.cols {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.rows {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.refs {
+	flex-grow: 1;
+	width: 100%;
+}
+
+.ref {
+	font-size: 14px;
+	width: 100%;
+	/* width: fit-content; */
 }
 
 .container {
@@ -36,7 +77,7 @@ nav {
 }
 
 .item-info {
-	font-size: 24px;
+	font-size: 26px;
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;
 }
@@ -93,10 +134,6 @@ iframe,
 	border-radius: 0.5em;
 }
 
-nav a {
-	padding-right: 10px;
-}
-
 a {
 	cursor: pointer;
 	color: #eee;
@@ -111,4 +148,29 @@ a:hover,
 
 .item-iframe:hover {
 	border-color: #0ff;
+}
+
+#pageNav {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+footer {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+/* reference */
+
+#list {
+	display: flex;
+	flex-flow: row wrap;
+	gap: 14px;
+	border: #eee solid 1px;
+	padding: 14px;
+	margin: 14px;
+}
+
+.body {
+	margin: 40px;
 }
