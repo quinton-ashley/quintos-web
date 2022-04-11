@@ -108,7 +108,7 @@ if (args.user) {
 	generatePreviews(games);
 } else {
 	let games = [
-		{ user: 'quinton-ashley', preload: 'false', title: 'Wordle' },
+		{ user: 'quinton-ashley', level: '8', title: 'Wordle' },
 		{ user: 'jaximuslim', title: 'Snake' },
 		{ user: 'Paeto-Chayarat', title: 'Crazy7', sys: 'arcv' },
 		{ user: 'rsaijo24', title: 'Contain', language: 'java' },

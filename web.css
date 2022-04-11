@@ -101,30 +101,6 @@ iframe,
 	height: 320px;
 }
 
-@media screen and (max-width: 1300px) {
-	.item {
-		width: 33%;
-	}
-
-	iframe,
-	.gameLink,
-	.item-iframe {
-		height: 250px;
-	}
-}
-
-@media screen and (max-width: 1000px) {
-	.item {
-		width: 50%;
-	}
-
-	iframe,
-	.gameLink,
-	.item-iframe {
-		height: 250px;
-	}
-}
-
 .btn,
 .btn:visited {
 	color: #eee;
@@ -173,4 +149,28 @@ footer {
 
 .body {
 	margin: 40px;
+}
+
+@media screen and (max-width: 1300px) {
+	.item {
+		width: 33%;
+	}
+
+	iframe,
+	.gameLink,
+	.item-iframe {
+		height: 250px;
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.item {
+		width: 50%;
+	}
+
+	iframe,
+	.gameLink,
+	.item-iframe {
+		height: 250px;
+	}
 }
