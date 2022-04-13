@@ -13,11 +13,13 @@ let args = {
 	}
 }
 
+let gamesPerPage = 8;
+
 function generatePreviews(games) {
 	let html = '';
 
-	let startIndex = (args.page || 0) * 8;
-	for (let i = startIndex; i < startIndex + 8; i++) {
+	let startIndex = (args.page || 0) * gamesPerPage;
+	for (let i = startIndex; i < startIndex + gamesPerPage; i++) {
 		let game = games[i];
 		if (!game) break;
 		let { user, title } = game;
@@ -60,6 +62,9 @@ function generatePreviews(games) {
 	if (args.user) url += 'user=' + args.user;
 	if (args.page) {
 		document.getElementById('prev').href = url + `&page=${args.page - 1}`;
+		if (games.length <= (args.page + 1) * gamesPerPage) {
+			document.getElementById('next').hidden = true;
+		}
 	} else {
 		document.getElementById('prev').hidden = true;
 	}
@@ -79,7 +84,7 @@ function generatePreviews(games) {
 }
 
 if (args.user) {
-	const GAMES = [
+	const gameTitles = [
 		'Sokoban',
 		'SuperJump',
 		'SketchBook',
@@ -100,7 +105,7 @@ if (args.user) {
 
 	let games = [];
 
-	for (let title of GAMES) {
+	for (let title of gameTitles) {
 		let game = { title: title, user: args.user };
 		if (args.language) game.language = args.language;
 		games.push(game);
@@ -108,7 +113,7 @@ if (args.user) {
 	generatePreviews(games);
 } else {
 	let games = [
-		{ user: 'quinton-ashley', level: '8', title: 'Wordle' },
+		{ user: 'quinton-ashley', title: 'Wordle' },
 		{ user: 'jaximuslim', title: 'Snake' },
 		{ user: 'Paeto-Chayarat', title: 'Crazy7', sys: 'arcv' },
 		{ user: 'rsaijo24', title: 'Contain', language: 'java' },
@@ -119,8 +124,8 @@ if (args.user) {
 		{ user: 'jaximuslim', title: 'QuickClicks' },
 		{ user: 'quinton-ashley', title: 'Sokoban' },
 		{ user: 'quinton-ashley', title: 'Hangman' },
-		{ user: 'quinton-ashley', title: 'WheelOfFortune' },
-		{ user: 'quinton-ashley', title: 'SuperJump' }
+		{ user: 'quinton-ashley', title: 'SuperJump' },
+		{ user: 'quinton-ashley', title: 'WheelOfFortune' }
 		// { user: 'sophiaaaaaaaaaaaa', title: 'Pong', language: 'java' }
 	];
 	generatePreviews(games);
