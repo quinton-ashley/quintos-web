@@ -138,22 +138,57 @@ footer {
 
 /* reference */
 
+code {
+	tab-size: 2;
+}
+
+.center {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
 #list {
 	display: flex;
 	flex-flow: row wrap;
-	gap: 14px;
+	justify-content: start;
 	border: #eee solid 1px;
-	padding: 14px;
+	gap: 28px;
+	padding: 28px;
 	margin: 14px;
+	padding-right: 30px;
+	padding-top: 14px;
+	width: max-content;
+}
+
+#list h3 {
+	margin-top: 7px;
+	margin-bottom: 7px;
+}
+
+#list div {
+	display: flex;
+	flex-flow: column wrap;
+	gap: 14px;
 }
 
 .body {
 	margin: 40px;
+	display: flex;
+	justify-content: center;
+}
+
+.body div {
+	width: 800px;
 }
 
 @media screen and (max-width: 1300px) {
 	.item {
 		width: 33%;
+	}
+
+	.body div {
+		width: 800px;
 	}
 
 	iframe,
@@ -166,6 +201,10 @@ footer {
 @media screen and (max-width: 1000px) {
 	.item {
 		width: 50%;
+	}
+
+	.body div {
+		width: auto;
 	}
 
 	iframe,

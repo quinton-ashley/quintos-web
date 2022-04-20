@@ -20,19 +20,31 @@ let pages = {};
 
 (async () => {
 	let ref = await (await fetch('reference_js.md')).text();
-	ref = ref.split(/## (.*)\n\n/m).slice(1);
-	// log(ref);
 
+	ref = ref.split(/(?:^|\n)# (.*)\n/m).slice(1);
+	log(ref);
 	for (let i = 0; i < ref.length; i += 2) {
-		pages[ref[i]] = ref[i + 1];
+		let ref2 = ref[i + 1].split(/\n## (.*)\n\n/m).slice(1);
+		log(ref2);
+		pages[ref[i]] = {};
+		for (let j = 0; j < ref2.length; j += 2) {
+			pages[ref[i]][ref2[j]] = ref2[j + 1];
+		}
 	}
-	// log(pages);
+	log(pages);
 
 	if (args.r) changePage(args.r);
 
-	for (let name in pages) {
-		list.innerHTML += `<a onclick="changePage('${name}')">${name}</a>`;
+	let html = '';
+	for (let header in pages) {
+		log(header);
+		html += `<div><h3>${header}</h3>`;
+		for (let name in pages[header]) {
+			html += `<a onclick="changePage('${name}')">${name}</a>`;
+		}
+		html += '</div>';
 	}
+	list.innerHTML += html;
 })();
 
 function changePage(name) {
@@ -40,5 +52,9 @@ function changePage(name) {
 	history.pushState({}, 'QuintOS ' + name, url);
 
 	title.innerHTML = name;
-	doc.innerHTML = md.render(pages[name]);
+	for (let header in pages) {
+		if (!pages[header][name]) continue;
+		doc.innerHTML = md.render(pages[header][name]);
+		break;
+	}
 }
