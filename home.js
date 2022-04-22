@@ -92,7 +92,7 @@ if (args.user) {
 		'SpeakAndSpell',
 		'TicTacAIO',
 		'Contain',
-		'WheelOfFortune',
+		'Wordle',
 		'WorldWideWeb',
 		'TicTacToe',
 		'ClickAPath',
