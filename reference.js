@@ -18,7 +18,19 @@ let doc = document.getElementById('doc');
 let list = document.getElementById('list');
 let pages = {};
 
-(async () => {
+if (!args.language || args.language == 'js') {
+	loadReferenceJS();
+} else if (args.language == 'html') {
+	loadReferenceHTML();
+}
+
+async function loadReferenceHTML() {
+	let ref = await (await fetch('reference_html.md')).text();
+	title.innerHTML = 'Common HTML tags';
+	doc.innerHTML = md.render(ref).replaceAll('&lt;li&gt; ', '<li> ');
+}
+
+async function loadReferenceJS() {
 	let ref = await (await fetch('reference_js.md')).text();
 
 	ref = ref.split(/(?:^|\n)# (.*)\n/m).slice(1);
@@ -45,7 +57,7 @@ let pages = {};
 		html += '</div>';
 	}
 	list.innerHTML += html;
-})();
+}
 
 function changePage(name) {
 	let url = `?r=${name}`;

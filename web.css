@@ -34,10 +34,6 @@ nav .icon {
 	font-size: 50px;
 }
 
-#referenceLinks {
-	height: 80px;
-}
-
 .cols {
 	display: flex;
 	flex-flow: column wrap;
@@ -53,15 +49,13 @@ nav .icon {
 }
 
 .refs {
-	flex-grow: 1;
-	width: 100%;
+	gap: 14px;
+	height: 24px;
 }
 
 .ref {
-	font-size: 14px;
-	width: 100%;
+	font-size: 16px;
 	text-align: center;
-	/* width: fit-content; */
 }
 
 .container {
@@ -176,22 +170,38 @@ code {
 }
 
 .body {
-	margin: 40px;
 	display: flex;
 	justify-content: center;
 }
 
 .body div {
-	width: 800px;
+	width: 750px;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+tr {
+	border-bottom: #aaa solid 1px;
+}
+
+thead tr {
+	border-bottom: #aaa solid 2px;
+}
+
+th,
+td {
+	padding: 12px;
+}
+
+li {
+	margin-bottom: 12px;
 }
 
 @media screen and (max-width: 1300px) {
 	.item {
 		width: 33%;
-	}
-
-	.body div {
-		width: 800px;
 	}
 
 	iframe,
@@ -206,13 +216,17 @@ code {
 		width: 50%;
 	}
 
-	.body div {
-		width: auto;
-	}
-
 	iframe,
 	.gameLink,
 	.item-iframe {
 		height: 250px;
+	}
+}
+
+@media screen and (max-width: 790px) {
+	.body div {
+		min-width: 95vw;
+		max-width: 95vw;
+		width: auto;
 	}
 }
