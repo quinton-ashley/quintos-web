@@ -44,8 +44,8 @@ await alert(txt, row, col, w, h, speed);
 
 Creates an alert window with the specified text. If no optional parameters are provided, defaults are used which are different for each QuintOS computer.
 
-- `row` and `col` (optional) specify the row and column values of the top left corner of the alert window
-- `width` and `height` (optional)
+- `row`, `col` (optional) the row and column values of the top left corner of the alert window
+- `w`, `h` (optional) width and height
 - `speed` (optional) letters drawn per frame
 
 ## prompt
@@ -58,6 +58,10 @@ Creates a prompt window, which displays a message to the user and allows them to
 
 Returns the user's input. If the user entered a number `prompt` will return a number, otherwise it will return a string unless the user pressed cancel, then `null` will be returned.
 
+- `row`, `col` (optional) the row and column values of the top left corner of the alert window
+- `w`, `h` (optional) width and height
+- `speed` (optional) letters drawn per frame
+
 ## button
 
 ```js
@@ -68,10 +72,6 @@ Returns the `Button` object created.
 
 - `action` is a function that will run if the user presses the button
 
-```js
-btn.erase(); // remove button
-```
-
 ## upload
 
 ```js
@@ -81,7 +81,7 @@ let btn = upload(txt, row, col, type, action);
 Returns a special button for letting the user upload files. When the user clicks the button a file selection window will appear. After the user selects a file it is uploaded and parsed into text data.
 
 - `type` (optional) 'file' by default
-- `action(file)` is a function that will run if the user presses the button. It recieves a file object as an input.
+- `action(file)` is a function that will run if the user presses the button, it receives a file object as an input
   - `file.name` the file's name
   - `file.data` the file's data
 
@@ -117,8 +117,8 @@ await textRect(row, col, w, h, style, c, speed);
 
 Draws the lines of a rectangle in text.
 
-- `style` (optional) can be either 'dashed', 'outline', or 'solid'. The default is 'solid'.
-- `c` (optional) the character for the rectangle, it can be any character! The default is `-`, you can also use `=` for a double line rectangle.
+- `style` (optional) can be either 'dashed', 'outline', or 'solid', the default is 'solid'
+- `c` (optional) the character for the rectangle, the default is "-", use "=" for a double line rectangle
 
 ## textLine
 
@@ -126,8 +126,8 @@ Draws the lines of a rectangle in text.
 await textLine(row1, col1, row2, col2, style, c, speed);
 ```
 
-- `style` (optional) can be either 'dashed', 'outline', or 'solid'. The default is 'solid'.
-- `c` (optional) the character for the rectangle, it can be any character! The default is `-`, you can also use `=` for a double line rectangle.
+- `style` (optional) can be either 'dashed', 'outline', or 'solid', the default is 'solid'
+- `c` (optional) the character for the line, the default is "-"
 
 ## erase
 
@@ -145,7 +145,7 @@ await eraseRect(row, col, w, h, speed);
 
 Erases text within the specified rectangle.
 
-# play
+# p5.js
 
 ## spriteArt
 
@@ -157,9 +157,9 @@ Returns the p5.js image object created.
 
 - `txt` should be a string that only contains valid color letters and newlines
 - `scale` (optional) scale of the image
-- `palette` (optional) a color palette object that overrides the default QuintOS color palette.
+- `palette` (optional) a color palette object that overrides the default QuintOS color palette
 
-Here's the c64's color palatte for example of proper palette formatting:
+Here's the c64's color palette for example of proper palette formatting:
 
 ```js
 {
@@ -235,15 +235,35 @@ The p5.js `text` function, use it in the `draw` loop.
 
 <https://p5js.org/reference/#/p5/text>
 
+## createAni
+
+```js
+let animation = createAni(spriteSheetImg, size, pos, frameCount, frameDelay);
+```
+
+Returns a new p5.play animation.
+
+- `spriteSheetImg` a sprite sheet, an image containing multiple animations
+- `size` can be either a number used for both the width and height of the animation or array of [width, height] values
+- `pos` can either be a row number or an array of [row, col] values
+- `frameCount` is a number representing how many frames are in the animation, starting from the frame at `pos`
+- `frameDelay` how many 60fps frames should each frame of this animation stay on screen
+
 # Sprite
 
 ## createSprite
 
 ```js
-createSprite(x, y, w, h);
-// OR
-createSprite(img, x, y);
+let sprite = createSprite(img, x, y);
+// or
+let sprite = createSprite(x, y, w, h);
 ```
+
+Returns a new p5.play Sprite object.
+
+- `img` p5.js image
+- `x` and `y` (optional) coordinates of the sprite's initial position
+- `w` and `h` (optional) the width and height of the sprite (otherwise defined by the image)
 
 ## sprite.ani
 
@@ -251,25 +271,158 @@ createSprite(img, x, y);
 sprite.ani(...anis);
 ```
 
+Changes the sprite's animation. Use `addAni` to define the animation(s) first.
+
+- `anis` the names of one or many animations to be played in sequence
+
+` `  
+` `
+
+### Examples
+
+```js
+player.ani('walk-down');
+```
+
+Changes the animation of the player sprite to "walk-down", which loops until the animation of the player is changed.
+
+```js
+player.ani('victory-pose', 'bow', 'dance');
+```
+
+Changes the animation of the player sprite to "victory-pose". When that animation is completed the "bow" animation will start. Finally the "dance" animation loops until the animation of the player changes.
+
 ## sprite.img
 
 ```js
 sprite.img(img);
 ```
 
-## loadAni
+Changes the sprite's image. Use `addImg` to define the image first.
+
+- `img` the name of the single frame animation
+
+` `  
+` `
+
+### Example
 
 ```js
-loadAni(spriteSheetImg, size, pos, frameCount, frameDelay);
+food3.img('apple');
 ```
 
-Easy way to load a p5.play animation.
+Changes the image of the `food3` sprite to "apple"
 
-- `spriteSheetImg` a spritesheet, an image containing multiple animations
-- `size` can be either a number used for both the width and height of the animation or array of [width, height] values
-- `pos` can either be a row number or an array of [row, col] values
-- `frameCount` is a number representing how many frames are in the animation, starting from the frame at `pos`
-- `frameDelay` how many 60fps frames should each frame of this animation stay on screen
+## sprite.move
+
+```js
+await sprite.move(direction, speed);
+```
+
+```js
+await sprite.move(row, col, speed);
+```
+
+Move sprite with animation at a certain speed. Optionally use `await` to wait for the sprite to finish moving.
+
+- `direction` single tile movement: 'up', 'down', 'left', or 'right'
+- `row`, `col` the row and column of the tile to move the sprite to
+- `speed` is the pixels per frame at which the sprite will move, the default is 1
+
+` `  
+` `
+
+#### Examples
+
+```js
+await player.move('up');
+```
+
+Moves the player up by one tile above its current tile position with the default speed of 1 pixel per frame.
+
+```js
+player.row = 4;
+player.col = 3;
+```
+
+Teleports the player sprite to row 4, col 3.
+
+## tgs.spriteSheet
+
+```js
+tgs.spriteSheet = image;
+```
+
+Sprite sheets are images which have a lot of smaller images in them. These could be images of character animations, items, or background environment tiles.
+
+- `tgs` a Tiles, Group, or Sprite object
+- `image` a p5.js image
+
+` `  
+` `
+
+### Example
+
+```js
+world.spriteSheet = loadImage(QuintOS.dir + '/world_16.png');
+```
+
+Sets the SpriteSheet image object of the `world` Tiles object to the result of the `loadImage` p5.js function which loads an p5.js image from a path.
+
+## tgs.addImg
+
+```js
+tgs.addImg(imgName, atlas);
+```
+
+Used to define a name for an image frame in a sprite sheet.
+
+- `tgs` a Tiles, Group, or Sprite object
+- `imgName` the name of the image
+- `atlas` defines the location of the image
+  - `line` a row in the sprite sheet (at column 0)
+  - `pos` [`row`, `col`] a row and column position in the sprite sheet
+  - `frames` the number of frames in the animation, default is 1
+  - `size` [`w`, `h`] (optional) default is the width and height of a tile
+
+` `  
+` `
+
+### Example
+
+```js
+items.addImg('powerup0', { pos: [5, 3] });
+```
+
+## tgs.addAni
+
+```js
+tiles.addAni(imgName, atlas);
+```
+
+Used to define a name for a multi-frame animation in a sprite sheet.
+
+- `tgs` a Tiles, Group, or Sprite object
+- `imgName` the name of the image
+- `atlas` defines the location of the image
+  - `line` a row in the sprite sheet (at column 0)
+  - `pos` [`row`, `col`] a row and column position in the sprite sheet
+  - `frames` the number of frames in the animation, default is 1
+  - `delay` amount of draw cycles that a frame of the animation is held before it is changed to the next frame in the animation, default is 4 (if the game frame rate is 60fps this means the animation will have a frame rate of 15fps)
+  - `size` [`w`, `h`] (optional) default is the width and height of a tile
+
+` `  
+` `
+
+### Example
+
+```js
+player.addAni('walk-down', { line: 2, frames: 4 });
+```
+
+Example of defining the "walk-down" animation as a 4 frame animation from row 2, column 0 in the player's sprite sheet using the default size of the sprite.
+
+# Tiles & Group
 
 ## createTiles
 
@@ -277,10 +430,65 @@ Easy way to load a p5.play animation.
 let tiles = createTiles(tileSize, x, y);
 ```
 
-Creates a tile world, a grid of tiles.
+Creates a tile world, a grid of tiles of a certain size.
 
 - `tileSize` is the width and height of the tiles in pixels
+- `x` and `y` the tile at row 0, column 0 is placed at the given x, y coordinates
 
-## spritesheet
+## tiles.createGroup
 
-`.spriteSheet` is a property of Sprite objects used by QuintOS to load sprite animations.
+```js
+let group = tiles.createGroup();
+```
+
+The `createGroup` function of the tiles grid object can be used to create sub-groups of Sprites.
+
+` `  
+` `
+
+### Example
+
+```js
+let walls = world.createGroup();
+```
+
+Creates a `walls` group in the `world` tiles object.
+
+## tg.createSprite
+
+```js
+let sprite = tiles.createSprite(row, col, layer);
+```
+
+```js
+let sprite = tiles.createSprite(img || ani, row, col, layer);
+```
+
+The `createSprite` function of the Tile object works a bit differently than the normal `createSprite` function. It uses row, column position on the tile grid to position the sprite instead of x, y coordinates.
+
+- `tg` Tiles or Group object
+- `imgName` name of the image or animation
+- `row` the row in the tiles grid
+- `col` the column in the tiles grid
+- `layer` represents the depth of the Sprite in relation to the rest of the tiles in the grid. Sprites with a higher layer value will be placed above sprites on lower layers.
+
+` `  
+` `
+
+### Example
+
+```js
+let fireball = items.createSprite('powerup0', 5, 2, 1);
+```
+
+Creates a `fireball` sprite from the `items` group with an image found in the `items` group sprite sheet.
+
+## tg.removeSprites
+
+```js
+tg.removeSprites();
+```
+
+Removes all the sprites from the Tiles or Group object
+
+- `tg` Tiles or Group object

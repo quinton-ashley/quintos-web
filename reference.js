@@ -63,6 +63,9 @@ function changePage(name) {
 	let url = `?r=${name}`;
 	history.pushState({}, 'QuintOS ' + name, url);
 
+	document.body.scrollTop = 0;
+	document.documentElement.scrollTop = 0;
+
 	title.innerHTML = name;
 	for (let header in pages) {
 		if (!pages[header][name]) continue;
