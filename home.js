@@ -114,8 +114,8 @@ if (args.user) {
 } else {
 	let games = [
 		{ user: 'quinton-ashley', title: 'Wordle' },
-		{ user: 'jaximuslim', title: 'Snake' },
-		{ user: 'Paeto-Chayarat', title: 'Crazy7', sys: 'arcv' },
+		// { user: 'jaximuslim', title: 'Snake' },
+		// { user: 'Paeto-Chayarat', title: 'Crazy7', sys: 'arcv' },
 		{ user: 'Morz75', title: 'ClickAPath' },
 		{ user: 'carter-noa', title: 'QuickClicks' },
 		{ user: 'Rayan-Hobballah', title: 'PickAPath' },
@@ -124,9 +124,9 @@ if (args.user) {
 		{ user: 'rsaijo24', title: 'Contain', language: 'java' },
 		{ user: 'jaximuslim', title: 'QuickClicks' },
 		{ user: 'WarriorFPHS', title: 'QuickClicks' },
-		{ user: 'quinton-ashley', title: 'Sokoban' },
+		// { user: 'quinton-ashley', title: 'Sokoban' },
 		{ user: 'quinton-ashley', title: 'Hangman' },
-		{ user: 'quinton-ashley', title: 'SuperJump' },
+		// { user: 'quinton-ashley', title: 'SuperJump' },
 		{ user: 'quinton-ashley', title: 'WheelOfFortune' }
 		// { user: 'sophiaaaaaaaaaaaa', title: 'Pong', language: 'java' }
 	];
