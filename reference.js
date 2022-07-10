@@ -18,20 +18,24 @@ let doc = document.getElementById('doc');
 let list = document.getElementById('list');
 let pages = {};
 
-if (!args.language || args.language == 'js') {
-	loadReferenceJS();
-} else if (args.language == 'html') {
-	loadReferenceHTML();
-}
+args.language ??= 'js';
+loadReference(args.language);
 
-async function loadReferenceHTML() {
-	let ref = await (await fetch('reference_html.md')).text();
-	title.innerHTML = 'Common HTML tags';
-	doc.innerHTML = md.render(ref).replaceAll('&lt;li&gt; ', '<li> ');
-}
+async function loadReference(lang) {
+	let ref = await (await fetch('reference_' + lang + '.md')).text();
 
-async function loadReferenceJS() {
-	let ref = await (await fetch('reference_js.md')).text();
+	if (lang == 'html') {
+		title.innerHTML = 'Common HTML tags';
+		doc.innerHTML = md.render(ref).replaceAll('&lt;li&gt; ', '<li> ');
+		return;
+	} else if (lang == 'css') {
+		title.innerHTML = 'CSS';
+		doc.innerHTML = md.render(ref);
+		return;
+	} else if (lang == 'java') {
+		title.innerHTML = 'Java Reference';
+		doc.innerHTML = 'coming soon!';
+	}
 
 	ref = ref.split(/(?:^|\n)# (.*)\n/m).slice(1);
 	log(ref);
