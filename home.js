@@ -117,20 +117,21 @@ if (args.user) {
 } else {
 	let games = [
 		{ user: 'quinton-ashley', title: 'Wordle' },
-		// { user: 'jaximuslim', title: 'Snake' },
-		// { user: 'Paeto-Chayarat', title: 'Crazy7', sys: 'arcv' },
+		{ user: 'Paeto-Chayarat', title: 'NumberDash', sys: 'arc' },
+		{ user: 'WarriorFPHS', title: 'GenerativeArt' },
 		{ user: 'carter-noa', title: 'QuickClicks' },
 		{ user: 'Rayan-Hobballah', title: 'PickAPath' },
 		{ user: 'MEDBEDFAKE', title: 'TicTacToe' },
-		// { user: 'liljfff', title: 'Pong' },
-		// { user: 'rsaijo24', title: 'Contain', language: 'java' },
 		{ user: 'quinton-ashley', title: 'Pong' },
 		{ user: 'quinton-ashley', title: 'SpeakAndSpell' },
-		{ user: 'Morz75', title: 'ClickAPath' },
+
 		{ user: 'quinton-ashley', title: 'Sokoban' },
 		{ user: 'quinton-ashley', title: 'Hangman' },
+		{ user: 'quinton-ashley', title: 'WheelOfFortune' },
+		{ user: 'Morz75', title: 'ClickAPath' }
+
+		// { user: 'jaximuslim', title: 'Snake' },
 		// { user: 'quinton-ashley', title: 'SuperJump' },
-		{ user: 'quinton-ashley', title: 'WheelOfFortune' }
 		// { user: 'sophiaaaaaaaaaaaa', title: 'Pong', language: 'java' }
 	];
 	generatePreviews(games);
