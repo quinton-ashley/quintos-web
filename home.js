@@ -48,7 +48,7 @@ function generatePreviews(games) {
 			<iframe src="${url}&iframe=true" scrolling="no" frameborder="0"></iframe>
 		</div>
 		<div class="item-info">
-			<a href="https://raw.githubusercontent.com/${user}/${project}/main/${dir}/${fileName}.${fileExt}" target="_blank" rel="noopener noreferrer">${title}</a>
+			<a href="${url}" target="_blank" rel="noopener noreferrer">${title}</a>
 			<span>by</span>
 			<a href="./home.html?user=${user}${game.language == 'java' ? '&language=java' : ''}">${user}</a>
 		</div>
@@ -123,12 +123,13 @@ if (args.user) {
 		{ user: 'Rayan-Hobballah', title: 'PickAPath' },
 		{ user: 'MEDBEDFAKE', title: 'TicTacToe' },
 		{ user: 'quinton-ashley', title: 'Pong' },
-		{ user: 'quinton-ashley', title: 'SpeakAndSpell' },
+		{ user: 'jaximuslim', title: 'SpeakAndSpell' },
 
+		{ user: 'Morz75', title: 'ClickAPath' },
+		{ user: 'quinton-ashley', title: 'Pong' },
 		{ user: 'quinton-ashley', title: 'Sokoban' },
 		{ user: 'quinton-ashley', title: 'Hangman' },
-		{ user: 'quinton-ashley', title: 'WheelOfFortune' },
-		{ user: 'Morz75', title: 'ClickAPath' }
+		{ user: 'quinton-ashley', title: 'WheelOfFortune' }
 
 		// { user: 'jaximuslim', title: 'Snake' },
 		// { user: 'quinton-ashley', title: 'SuperJump' },
