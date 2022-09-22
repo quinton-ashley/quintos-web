@@ -119,9 +119,9 @@ if (args.user) {
 		{ user: 'quinton-ashley', title: 'Wordle' },
 		{ user: 'Paeto-Chayarat', title: 'NumberDash', sys: 'arc' },
 		{ user: 'WarriorFPHS', title: 'GenerativeArt' },
-		{ user: 'quinton-ashley', title: 'QuickClicks' }, // carter-noa
-		{ user: 'quinton-ashley', title: 'PickAPath' }, // Rayan-Hobballah
-		{ user: 'quinton-ashley', title: 'TicTacToe' }, // MEDBEDFAKE
+		{ user: 'seva-zoff', title: 'QuickClicks' }, // carter-noa
+		{ user: 'StefanoCereser', title: 'PickAPath' }, // Rayan-Hobballah
+		{ user: 'quinton-ashley', title: 'LilyLeap' },
 		{ user: 'quinton-ashley', title: 'Pong' },
 		{ user: 'quinton-ashley', title: 'SpeakAndSpell' }, // jaximuslim
 
