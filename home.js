@@ -120,20 +120,16 @@ if (args.user) {
 		{ user: 'Paeto-Chayarat', title: 'NumberDash', sys: 'arc' },
 		{ user: 'WarriorFPHS', title: 'GenerativeArt' },
 		{ user: 'seva-zoff', title: 'QuickClicks' }, // carter-noa
-		{ user: 'StefanoCereser', title: 'PickAPath' }, // Rayan-Hobballah
-		{ user: 'quinton-ashley', title: 'LilyLeap' },
+		{ user: 'Ali4110', title: 'PickAPath' }, // Rayan-Hobballah
+		{ user: 'StefanoCereser', title: 'LilyLeap' },
 		{ user: 'quinton-ashley', title: 'Pong' },
 		{ user: 'quinton-ashley', title: 'SpeakAndSpell' }, // jaximuslim
 
 		// { user: 'Morz75', title: 'ClickAPath' },
-		{ user: 'quinton-ashley', title: 'Pong' },
+		// { user: 'quinton-ashley', title: 'Pong' },
 		{ user: 'quinton-ashley', title: 'Sokoban' },
 		{ user: 'quinton-ashley', title: 'Hangman' },
 		{ user: 'quinton-ashley', title: 'WheelOfFortune' }
-
-		// { user: 'jaximuslim', title: 'Snake' },
-		// { user: 'quinton-ashley', title: 'SuperJump' },
-		// { user: 'sophiaaaaaaaaaaaa', title: 'Pong', language: 'java' }
 	];
 	generatePreviews(games);
 }
