@@ -85,25 +85,24 @@ function generatePreviews(games) {
 
 if (args.user) {
 	const gameTitles = [
-		'Sokoban',
-		'SuperJump',
-		'Snake',
-		'Contain',
-		'SpeakAndSpell',
-		'TicTacAIO',
-		'Wordle',
-		'WorldWideWeb',
-		'DataDesigner',
-		'TicTacToe',
+		'GuessTheNumber',
+		'PickAPath',
+		'Pong',
+		'LilyLeap',
+		'Hangman',
+		'QuickClicks',
+		'BinaryConverter',
 		'GenerativeArt',
 		'CodeBreaker',
-		'BinaryCounter',
-		'QuickClicks',
-		'Hangman',
-		'LilyLeap',
-		'Pong',
-		'PickAPath',
-		'GuessTheNumber'
+		'TicTacToe',
+		'DataDesigner',
+		'WorldWideWeb',
+		'Wordle',
+		'TicTacAIO',
+		'SpeakAndSpell',
+		'Contain',
+		'SuperJump',
+		'Sokoban'
 	];
 
 	let games = [];
