@@ -118,11 +118,11 @@ if (args.user) {
 		{ user: 'quinton-ashley', title: 'Wordle' },
 		{ user: 'Paeto-Chayarat', title: 'NumberDash', sys: 'arc' },
 		{ user: 'WarriorFPHS', title: 'GenerativeArt' },
-		{ user: 'seva-zoff', title: 'QuickClicks' }, // carter-noa
-		{ user: 'Ali4110', title: 'PickAPath' }, // Rayan-Hobballah
-		{ user: 'StefanoCereser', title: 'LilyLeap' },
+		{ user: 'seva-zoff', title: 'QuickClicks' },
+		{ user: 'Ali4110', title: 'PickAPath' },
+		{ user: 'AmaniZungu', title: 'LilyLeap' },
 		{ user: 'quinton-ashley', title: 'Pong' },
-		{ user: 'quinton-ashley', title: 'SpeakAndSpell' }, // jaximuslim
+		{ user: 'quinton-ashley', title: 'BigBinary' }, // jaximuslim
 
 		// { user: 'Morz75', title: 'ClickAPath' },
 		// { user: 'quinton-ashley', title: 'Pong' },
