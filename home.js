@@ -115,20 +115,21 @@ if (args.user) {
 	generatePreviews(games);
 } else {
 	let games = [
-		{ user: 'quinton-ashley', title: 'Wordle' },
+		{ user: 'Ali4110', title: 'Wordle' },
 		{ user: 'Paeto-Chayarat', title: 'NumberDash', sys: 'arc' },
 		{ user: 'WarriorFPHS', title: 'GenerativeArt' },
 		{ user: 'seva-zoff', title: 'QuickClicks' },
 		{ user: 'Ali4110', title: 'PickAPath' },
 		{ user: 'AmaniZungu', title: 'LilyLeap' },
 		{ user: 'quinton-ashley', title: 'Pong' },
-		{ user: 'quinton-ashley', title: 'BigBinary' }, // jaximuslim
+		{ user: 'quinton-ashley', title: 'BigBinary' },
 
-		// { user: 'Morz75', title: 'ClickAPath' },
-		// { user: 'quinton-ashley', title: 'Pong' },
+		{ user: 'Ali4110', title: 'TicTacAIO' },
 		{ user: 'quinton-ashley', title: 'Sokoban' },
 		{ user: 'quinton-ashley', title: 'Hangman' },
-		{ user: 'quinton-ashley', title: 'WheelOfFortune' }
+		{ user: 'quinton-ashley', title: 'WheelOfFortune' },
+		{ user: 'Ali4110', title: 'DataDesigner' },
+		{ user: 'quinton-ashley', title: 'SpeakAndSpell' } // jaximuslim 's version needs menu select
 	];
 	generatePreviews(games);
 }
