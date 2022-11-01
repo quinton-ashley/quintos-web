@@ -1,6 +1,6 @@
 {
 	"name": "quintos-web",
-	"version": "1.0.44",
+	"version": "1.0.45",
 	"description": "quintos.org website",
 	"main": "index.html",
 	"scripts": {

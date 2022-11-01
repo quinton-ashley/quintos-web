@@ -118,14 +118,14 @@ if (args.user) {
 		{ user: 'Ali4110', title: 'Wordle' },
 		{ user: 'Paeto-Chayarat', title: 'NumberDash', sys: 'arc' },
 		{ user: 'WarriorFPHS', title: 'GenerativeArt' },
-		{ user: 'AmaniZungu', title: 'QuickClicks' },
+		{ user: 'seva-zoff', title: 'QuickClicks' },
 		{ user: 'Ali4110', title: 'PickAPath' },
-		{ user: 'CornN10', title: 'LilyLeap' },
+		{ user: 'AmaniZungu', title: 'LilyLeap' }, // CornN10
 		{ user: 'quinton-ashley', title: 'Pong' },
 		{ user: 'quinton-ashley', title: 'BigBinary' },
 
 		{ user: 'Ali4110', title: 'TicTacAIO' },
-		{ user: 'seva-zoff', title: 'QuickClicks' },
+		{ user: 'CornN10', title: 'LilyLeap' },
 		{ user: 'quinton-ashley', title: 'Sokoban' },
 		{ user: 'quinton-ashley', title: 'Hangman' },
 		{ user: 'quinton-ashley', title: 'WheelOfFortune' },
