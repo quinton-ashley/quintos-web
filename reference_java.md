@@ -145,7 +145,7 @@ await eraseRect(row, col, w, h, speed);
 
 Erases text within the specified rectangle.
 
-# p5.play
+# p5play
 
 ## spriteArt
 
