@@ -105,7 +105,7 @@ if (args.user) {
 } else {
 	let games = [
 		{ user: 'Ali4110', title: 'Wordle', v: 4 },
-		{ user: 'Paeto-Chayarat', title: 'NumberDash', sys: 'arc', v: 4 },
+		{ user: 'Paeto-Chayarat', title: 'NumberDash', sys: 'arc' },
 		{ user: 'OleHo370', title: 'GenerativeArt', v: 5 },
 		{ user: 'seva-zoff', title: 'QuickClicks', v: 4 },
 		{ user: 'Ali4110', title: 'PickAPath', v: 4 },
