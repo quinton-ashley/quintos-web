@@ -39,7 +39,7 @@ Closes the QuintOS program. Note that `exit` does not end the code execution of 
 ## alert
 
 ```js
-await alert(txt, row, col, w, h, speed);
+await alert(text, row, col, w, h, speed);
 ```
 
 Creates an alert window with the specified text. If no optional parameters are provided, defaults are used which are different for each QuintOS computer.
@@ -51,7 +51,7 @@ Creates an alert window with the specified text. If no optional parameters are p
 ## prompt
 
 ```js
-await prompt(txt, row, col, w, h, speed);
+await prompt(text, row, col, w, h, speed);
 ```
 
 Creates a prompt window, which displays a message to the user and allows them to respond with text or press the cancel button.
@@ -65,7 +65,7 @@ Returns the user's input. If the user entered a number `prompt` will return a nu
 ## button
 
 ```js
-let btn = button(txt, row, col, action);
+let btn = button(text, row, col, action);
 ```
 
 Returns the `Button` object created.
@@ -101,33 +101,46 @@ Returns the `Input` object created.
 
 # textual
 
-## text
+## txt
 
 ```js
-await text(txt, row, col, w, h, speed);
+await txt(text, row, col, w, h, speed);
 ```
 
 Displays text and returns the amount of lines required to display the text after width limiting is performed.
 
-## textRect
+- `text` the text to display
+- `row`, `col` (optional) the row and column values of the top left corner of the text
+- `w`, `h` (optional) width and height limits
+- `speed` (optional) characters drawn per frame
+
+## txtRect
 
 ```js
-await textRect(row, col, w, h, style, c, speed);
+await txtRect(row, col, w, h, style, c, speed);
 ```
 
 Draws the lines of a rectangle in text.
 
+- `row`, `col` the top left corner of the rectangle
+- `w`, `h` the width and height of the rectangle
 - `style` (optional) can be either 'dashed', 'outline', or 'solid', the default is 'solid'
 - `c` (optional) the character for the rectangle, the default is "-", use "=" for a double line rectangle
+- `speed` (optional) characters drawn per frame
 
-## textLine
+## txtLine
 
 ```js
-await textLine(row1, col1, row2, col2, style, c, speed);
+await txtLine(row1, col1, row2, col2, style, c, speed);
 ```
 
+Draws a line in text.
+
+- `row1`, `col1` the starting position of the line
+- `row2`, `col2` the ending position of the line
 - `style` (optional) can be either 'dashed', 'outline', or 'solid', the default is 'solid'
 - `c` (optional) the character for the line, the default is "-"
+- `speed` (optional) characters drawn per frame
 
 ## erase
 
@@ -145,10 +158,14 @@ await eraseRect(row, col, w, h, speed);
 
 Erases text within the specified rectangle.
 
-## drawText
+- `row`, `col` the top left corner of the rectangle
+- `w`, `h` the width and height of the rectangle
+- `speed` (optional) characters erased per frame
+
+## text
 
 ```js
-drawText(txt, x, y);
+text(text, x, y);
 ```
 
 The p5.js `text` function, use it in the `draw` loop.

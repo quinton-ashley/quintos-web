@@ -39,7 +39,7 @@ Closes the QuintOS program. Note that `exit` does not end the code execution of 
 ## alert
 
 ```js
-await alert(txt, row, col, w, h, speed);
+await alert(text, row, col, w, h, speed);
 ```
 
 Creates an alert window with the specified text. If no optional parameters are provided, defaults are used which are different for each QuintOS computer.
@@ -51,7 +51,7 @@ Creates an alert window with the specified text. If no optional parameters are p
 ## prompt
 
 ```js
-await prompt(txt, row, col, w, h, speed);
+await prompt(text, row, col, w, h, speed);
 ```
 
 Creates a prompt window, which displays a message to the user and allows them to respond with text or press the cancel button.
@@ -65,7 +65,7 @@ Returns the user's input. If the user entered a number `prompt` will return a nu
 ## button
 
 ```js
-let btn = button(txt, row, col, action);
+let btn = button(text, row, col, action);
 ```
 
 Returns the `Button` object created.
@@ -101,33 +101,46 @@ Returns the `Input` object created.
 
 # textual
 
-## text
+## txt
 
 ```js
-await text(txt, row, col, w, h, speed);
+await txt(text, row, col, w, h, speed);
 ```
 
 Displays text and returns the amount of lines required to display the text after width limiting is performed.
 
-## textRect
+- `text` the text to display
+- `row`, `col` (optional) the row and column values of the top left corner of the text
+- `w`, `h` (optional) width and height limits
+- `speed` (optional) characters drawn per frame
+
+## txtRect
 
 ```js
-await textRect(row, col, w, h, style, c, speed);
+await txtRect(row, col, w, h, style, c, speed);
 ```
 
 Draws the lines of a rectangle in text.
 
+- `row`, `col` the top left corner of the rectangle
+- `w`, `h` the width and height of the rectangle
 - `style` (optional) can be either 'dashed', 'outline', or 'solid', the default is 'solid'
 - `c` (optional) the character for the rectangle, the default is "-", use "=" for a double line rectangle
+- `speed` (optional) characters drawn per frame
 
-## textLine
+## txtLine
 
 ```js
-await textLine(row1, col1, row2, col2, style, c, speed);
+await txtLine(row1, col1, row2, col2, style, c, speed);
 ```
 
+Draws a line in text.
+
+- `row1`, `col1` the starting position of the line
+- `row2`, `col2` the ending position of the line
 - `style` (optional) can be either 'dashed', 'outline', or 'solid', the default is 'solid'
 - `c` (optional) the character for the line, the default is "-"
+- `speed` (optional) characters drawn per frame
 
 ## erase
 
@@ -145,80 +158,14 @@ await eraseRect(row, col, w, h, speed);
 
 Erases text within the specified rectangle.
 
-# p5play
+- `row`, `col` the top left corner of the rectangle
+- `w`, `h` the width and height of the rectangle
+- `speed` (optional) characters erased per frame
 
-## spriteArt
-
-```js
-let img = spriteArt(txt, scale, palette);
-```
-
-Returns the p5.js image object created.
-
-- `txt` should be a string that only contains valid color letters and newlines
-- `scale` (optional) scale of the image
-- `palette` (optional) a color palette object that overrides the default QuintOS color palette
-
-Here's the c64's color palette for example of proper palette formatting:
+## text
 
 ```js
-{
-  ' ': '',
-  '.': '',
-  k: '#000000', // blacK
-  d: '#626252', // Dark-gray
-  m: '#898989', // Mid-gray
-  l: '#adadad', // Light-gray
-  w: '#ffffff', // White
-  c: '#cb7e75', // Coral
-  r: '#9f4e44', // Red
-  n: '#6d5412', // browN
-  o: '#a1683c', // Orange
-  y: '#c9d487', // Yellow
-  e: '#9ae29b', // light grEEn
-  g: '#5cab5e', // Green
-  t: '#6abfc6', // Teal
-  b: '#50459b', // Blue
-  i: '#887ecb', // Indigo
-  p: '#a057a3' // Purple
-}
-```
-
-## colorPal
-
-```js
-colorPal(c, palette);
-```
-
-Returns a hex color string to use with p5.js functions like background, fill, and stroke.
-
-- `c` is the color letter
-- `palette` (optional) defaults to the system's default palette
-
-## keyIsDown
-
-```js
-keyIsDown(keyName);
-```
-
-Checks if a key is being held.
-
-- `keyName` a string containing the simple name of the key
-
-'Alt', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'CapsLock', 'Clear', 'Control', 'Delete', 'Escape', 'Insert', 'PageDown', 'PageUp', 'Shift', 'Tab'
-
-## play
-
-```js
-await play(sound);
-```
-
-Plays a p5.sound object. Returns a Promise which is fulfilled when the sound finishes playing.
-
-## drawText
-
-```js
-drawText(txt, x, y);
+text(text, x, y);
 ```
 
 The p5.js `text` function, use it in the `draw` loop.
